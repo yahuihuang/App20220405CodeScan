@@ -54,7 +54,14 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         // 第一次啟動
         avCaptureSession.startRunning()
-        
+    }
+    
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if metadataObjects.count > 0 {
+            let machineReabableCode = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+            myLabel.text = machineReabableCode.stringValue
+            avCaptureSession.stopRunning()
+        }
     }
 
 }
