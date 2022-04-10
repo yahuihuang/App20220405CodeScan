@@ -13,7 +13,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="App20220405CodeScan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -34,13 +34,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE8-YZ-901">
+                                <rect key="frame" x="167.5" y="594" width="79.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LZD-BE-R8e"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Re-Scan">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="1" green="0.91940291090000004" blue="0.1069808545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doReScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSq-sd-S4b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
+                            <constraint firstItem="gE8-YZ-901" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="26n-Yi-1l9"/>
+                            <constraint firstItem="gE8-YZ-901" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="83s-U3-LgD"/>
                             <constraint firstItem="D0l-yQ-VNV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="AA3-qA-622"/>
                             <constraint firstItem="yse-HG-AH2" firstAttribute="top" secondItem="D0l-yQ-VNV" secondAttribute="bottom" constant="30" id="FtW-ka-yfG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yse-HG-AH2" secondAttribute="trailing" constant="30" id="InH-nA-fx9"/>
+                            <constraint firstItem="gE8-YZ-901" firstAttribute="top" secondItem="yse-HG-AH2" secondAttribute="bottom" constant="20" id="NzA-Lr-gYG"/>
+                            <constraint firstItem="gE8-YZ-901" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XUk-vL-Iun"/>
+                            <constraint firstItem="gE8-YZ-901" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1h-4i-RA1"/>
                             <constraint firstItem="yse-HG-AH2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fwc-Jd-qr3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D0l-yQ-VNV" secondAttribute="trailing" constant="10" id="jFm-XL-bwz"/>
                             <constraint firstItem="D0l-yQ-VNV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tsr-5n-53K"/>
