@@ -6,14 +6,26 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var myView: UIView!
+    
+    let avCaptureSession = AVCaptureSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setCodeScan()
     }
 
+    func setCodeScan() {
+        guard let avCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video) else { return }
+        guard let avCaptureInput = try? AVCaptureDeviceInput(device: avCaptureDevice) else { return }
+        avCaptureSession.addInput(avCaptureInput)
+    }
 
 }
 
