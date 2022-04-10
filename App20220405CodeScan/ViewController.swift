@@ -60,6 +60,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         if metadataObjects.count > 0 {
             let machineReabableCode = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
             myLabel.text = machineReabableCode.stringValue
+            
+            // 文字轉語音
+            let utterance = AVSpeechUtterance(string: "找到: \(machineReabableCode.stringValue ?? "")")
+            utterance.rate = 0.5
+            let synthesizer = AVSpeechSynthesizer()
+            synthesizer.speak(utterance)
+            
             avCaptureSession.stopRunning()
         }
     }
